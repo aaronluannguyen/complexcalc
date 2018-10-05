@@ -26,12 +26,22 @@ class Calculator {
     
     // Addition for two points in paranthesis form
     func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
-        return (0, 0)
+        return (lhs.0 + rhs.0, lhs.1 + rhs.1)
     }
     
     // Addition for two Points in dictionary form
     func add(lhs: [String : Int], rhs: [String : Int]) -> [String : Int] {
-        return ["x" : 0, "y" : 0]
+        let p1xWrapped:Int? = lhs["x"]
+        let p1x:Int = p1xWrapped!
+        let p1yWrapped:Int? = lhs["y"]
+        let p1y:Int = p1yWrapped!
+        
+        let p2xWrapped:Int? = rhs["x"]
+        let p2x:Int = p2xWrapped!
+        let p2yWrapped:Int? = rhs["y"]
+        let p2y:Int = p2yWrapped!
+        
+        return ["x": p1x + p2x, "y": p1y + p2y]
     }
 
     
@@ -43,12 +53,22 @@ class Calculator {
     
     // Subtraction for two points in paranthesis form
     func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
-        return (0, 0)
+        return (lhs.0 - rhs.0, lhs.1 - rhs.1)
     }
     
     // Subtraction for two Points in dictionary form
     func subtract(lhs: [String : Int], rhs: [String : Int]) -> [String : Int] {
-        return ["x" : 0, "y" : 0]
+        let p1xWrapped:Int? = lhs["x"]
+        let p1x:Int = p1xWrapped!
+        let p1yWrapped:Int? = lhs["y"]
+        let p1y:Int = p1yWrapped!
+        
+        let p2xWrapped:Int? = rhs["x"]
+        let p2x:Int = p2xWrapped!
+        let p2yWrapped:Int? = rhs["y"]
+        let p2y:Int = p2yWrapped!
+        
+        return ["x": p1x - p2x, "y": p1y - p2y]
     }
     
     
