@@ -12,12 +12,16 @@ import Foundation
 class Calculator {
     // Addition for two Int parameters
     func add(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs + rhs
     }
     
     // Addition for an array of Ints
     func add(_ args: [Int]) -> Int {
-        return 0
+        var result = 0
+        for i in 0..<(args.count) {
+            result += args[i]
+        }
+        return result
     }
     
     // Addition for two points in paranthesis form
@@ -33,13 +37,9 @@ class Calculator {
     
     // Subtraction for two Int parameters
     func subtract(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs - rhs
     }
-    
-    // Subtraction for an array of Ints
-    func subtract(_ args: [Int]) -> Int {
-        return 0
-    }
+
     
     // Subtraction for two points in paranthesis form
     func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
@@ -54,35 +54,47 @@ class Calculator {
     
     // Multiplication for two Int parameters
     func multiply(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs * rhs
     }
     
     // Multiplication for an array of Ints
     func multiply(_ args: [Int]) -> Int {
-        return 0
+        if (args.count == 0) {
+            return 0
+        }
+        var result = args[0]
+        for i in 0..<(args.count) {
+            result = result * args[i]
+        }
+        return result
     }
     
     
     // Division for two Int parameters
     func divide(lhs: Int, rhs: Int) -> Int {
-        return 0
-    }
-    
-    // Division for an array of Ints
-    func divide(_ args: [Int]) -> Int {
-        return 0
+        return lhs / rhs
     }
     
     
     // Count Operation
     func count(_ args: [Int]) -> Int {
-        return 0
+        if (args.count == 0) {
+            return 0
+        }
+        return args.count
     }
     
     
     // Average Operation
     func avg(_ args: [Int]) -> Int {
-        return 0
+        if (args.count == 0) {
+            return 0
+        }
+        var result = 0
+        for i in 0..<(args.count) {
+            result += args[i]
+        }
+        return result / args.count
     }
     
     
