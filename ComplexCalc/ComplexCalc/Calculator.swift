@@ -119,12 +119,12 @@ class Calculator {
     
     
     // MathOps operation w/ lhs, rhs, and op
-    func mathOp(lhs: Int, rhs: Int, op: Int) -> Int {
-        return 0
+    func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
+        return op(lhs, rhs)
     }
     
     // MathOps operation w/ array of int, beg, and op
-    func mathOp(args: [Int], beg: Int, op: Int) -> Int {
-        return 0
+    func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
+        return args.reduce(beg) {op($0, $1)}
     }
 }
